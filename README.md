@@ -1,0 +1,1 @@
+# semrush-tech-assignment
