@@ -92,6 +92,27 @@ docker images
 ```
 
 
+## Step 5: Deploy to Kubernetes
+
+To deploy your Docker image to a Kubernetes cluster:
+
+1. Create a deployment:
+
+   ```bash
+   kubectl create deployment exampleapp --image=exampleapp
+   ```
+
+   This command creates a Kubernetes deployment using the Docker image tagged `exampleapp`.
+
+2. Expose the deployment:
+
+   ```bash
+   kubectl expose deployment exampleapp --type=LoadBalancer --port=8080 --target-port=8000
+   ```
+
+   This command sets up a Kubernetes service to expose your deployment via a `LoadBalancer`, making it accessible on port `8080`. The service forwards traffic to port `8000` on the container where the application is running.
+
+
 # Conclusion
 
 You've successfully containerized a Python application using Docker and deployed it to a Kubernetes cluster. For more information, refer to the official [Docker documentation](https://docs.docker.com/) and [Kubernetes documentation](https://kubernetes.io/docs/).
